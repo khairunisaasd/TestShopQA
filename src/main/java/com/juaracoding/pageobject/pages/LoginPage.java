@@ -1,5 +1,6 @@
 package com.juaracoding.pageobject.pages;
 
+//import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,14 +16,16 @@ public class LoginPage {
 		this.driver = DriverSingleton.getDriver();
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath = "//*[@id='txtUsername']")
+	@FindBy(xpath = "//input[@id='username']")
 	private WebElement username;
 	
-	@FindBy(xpath = "//*[@id='txtPassword']")
+	@FindBy(xpath = "//input[@id='password']")
 	private WebElement password;
 	
-	@FindBy(xpath = "//*[@id='btnLogin']")
+	@FindBy(xpath = "//button[@name='login']")
 	private WebElement btnLogin;
+	
+//	String txtInvalidLogin = driver.findElement(By.xpath("//ul[@role='alert']")).getText();
 	
 	//scenario
 	public void login(String username, String password) {//agar adminnya bisa ganti ganti maka dibuat parameter
